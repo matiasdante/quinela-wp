@@ -39,7 +39,7 @@ $ chmod +x main.py
 > Con esto le das permisos de ejecucion. 
 3. Corre el archivo:
 ```bash
-$ ./log-archive-tool.py
+$ ./main.py
 ```
 
 ## Credits

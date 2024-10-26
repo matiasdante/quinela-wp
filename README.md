@@ -23,7 +23,7 @@ Con esta app seras capaz de...
 
 ## Download
 Primero que nada necesitas tener GIT instalado, sino lo tenes descargado, podes descargarlo haciendo click [AQUI](https://git-scm.com) 
-Clona este repositorio: 
+### Clona este repositorio: 
 ```bash
 $ git clone https://github.com/matiasdante/quinela-wp.git
 ```

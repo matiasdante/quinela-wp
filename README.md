@@ -30,7 +30,7 @@ $ git clone https://github.com/matiasdante/quinela-wp.git
 ## How to use it
 1. Accede a la carpeta de la web
 ```bash
-$ cd log-archive-tool
+$ cd quinela-wp
 ```
 2. Tiras un `ls -la` y vas a ver tanto el `.py` srapper como webpage.
 ```bash

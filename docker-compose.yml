@@ -1,0 +1,36 @@
+version: '3.8'
+
+services:
+  quinela-app:
+    build: .
+    ports:
+      - "5000:5000"
+    volumes:
+      - ./data:/app/data
+      - ./logs:/app/logs
+    environment:
+      - FLASK_ENV=production
+      - PYTHONPATH=/app
+    restart: unless-stopped
+    
+  quinela-scraper:
+    build: .
+    command: python3 -m backend.scraper
+    volumes:
+      - ./data:/app/data
+      - ./logs:/app/logs
+    environment:
+      - PYTHONPATH=/app
+    restart: unless-stopped
+    depends_on:
+      - quinela-app
+
+  nginx:
+    image: nginx:alpine
+    ports:
+      - "80:80"
+    volumes:
+      - ./nginx.default:/etc/nginx/conf.d/default.conf
+    depends_on:
+      - quinela-app
+    restart: unless-stopped

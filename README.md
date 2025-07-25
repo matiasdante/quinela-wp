@@ -9,100 +9,100 @@
 <h4 align="center">Sistema Avanzado de Análisis de Datos para Quiniela - Predicciones Inteligentes y Dashboard Interactivo</h4>
 
 <p align="center">
-  <a href="#features">Features</a> •
-  <a href="#installation">Installation</a> •
-  <a href="#usage">Usage</a> •
+  <a href="#características">Características</a> •
+  <a href="#instalación">Instalación</a> •
+  <a href="#uso">Uso</a> •
   <a href="#api">API</a> •
   <a href="#docker">Docker</a> •
-  <a href="#credits">Credits</a> 
+  <a href="#créditos">Créditos</a> 
 </p>
 
 ![Quiniela Analytics Dashboard](https://github.com/user-attachments/assets/dd7b6c36-b842-40e5-b5fa-67b85c673253)
 
-## Features
+## Características
 
-### 🎯 Advanced Analytics
-- **Statistical Analysis**: Frequency analysis of numbers by month, week, and custom periods
-- **Hot/Cold Numbers**: Intelligent detection of trending and rare numbers
-- **Pattern Recognition**: Weekly patterns and consecutive number detection
-- **Smart Recommendations**: AI-powered predictions based on historical data
+### 🎯 Análisis Avanzado
+- **Análisis Estadístico**: Análisis de frecuencia de números por mes, semana y períodos personalizados
+- **Números Hot/Cold**: Detección inteligente de números en tendencia y números raros
+- **Reconocimiento de Patrones**: Patrones semanales y detección de números consecutivos
+- **Recomendaciones Inteligentes**: Predicciones potenciadas por IA basadas en datos históricos
 
-### 📊 Modern Dashboard
-- **Responsive Design**: Beautiful, mobile-friendly interface
-- **Real-time Data**: Live lottery results from multiple provinces
-- **Interactive Visualizations**: Statistics cards and frequency charts
-- **Multi-province Support**: Analysis across all Argentine provinces
+### 📊 Dashboard Moderno
+- **Diseño Responsivo**: Interfaz hermosa y adaptable a dispositivos móviles
+- **Datos en Tiempo Real**: Resultados de lotería en vivo de múltiples provincias
+- **Visualizaciones Interactivas**: Tarjetas de estadísticas y gráficos de frecuencia
+- **Soporte Multi-provincia**: Análisis de todas las provincias argentinas
 
-### 🔄 Automated Data Collection
-- **Automatic Scraping**: Scheduled data collection every hour
-- **Historical Storage**: SQLite database for long-term data analysis
-- **Error Handling**: Robust error management and logging
-- **Data Validation**: Clean and validated lottery results
+### 🔄 Recolección Automatizada de Datos
+- **Scraping Automático**: Recolección de datos programada cada hora
+- **Almacenamiento Histórico**: Base de datos SQLite para análisis de datos a largo plazo
+- **Manejo de Errores**: Gestión robusta de errores y logging
+- **Validación de Datos**: Resultados de lotería limpios y validados
 
-### 🚀 API-First Architecture
-- **RESTful API**: Complete API for all functionality
-- **JSON Responses**: Structured data for easy integration
-- **Real-time Analytics**: Live statistical computations
-- **Extensible**: Easy to add new analysis features
+### 🚀 Arquitectura API-First
+- **API RESTful**: API completa para toda la funcionalidad
+- **Respuestas JSON**: Datos estructurados para fácil integración
+- **Análisis en Tiempo Real**: Cálculos estadísticos en vivo
+- **Extensible**: Fácil de agregar nuevas características de análisis
 
-## Installation
+## Instalación
 
-### Prerequisites
-- Python 3.11 or higher
+### Requisitos Previos
+- Python 3.11 o superior
 - Git
 
-### Quick Start
+### Inicio Rápido
 
-1. **Clone the repository**:
+1. **Clonar el repositorio**:
 ```bash
 git clone https://github.com/matiasdante/quinela-wp.git
 cd quinela-wp
 ```
 
-2. **Install dependencies**:
+2. **Instalar dependencias**:
 ```bash
 pip install -r requirements.txt
 ```
 
-3. **Configure environment** (optional):
+3. **Configurar entorno** (opcional):
 ```bash
 cp .env.example .env
-# Edit .env with your preferred settings
+# Editar .env con tus configuraciones preferidas
 ```
 
-4. **Run the application**:
+4. **Ejecutar la aplicación**:
 ```bash
 python main.py
 ```
 
-5. **Access the dashboard**:
-Open [http://localhost:5000](http://localhost:5000) in your browser
+5. **Acceder al dashboard**:
+Abrir [http://localhost:5000](http://localhost:5000) en tu navegador
 
-## Usage
+## Uso
 
-### Web Dashboard
-The main dashboard provides:
-- Current lottery results from all provinces
-- Monthly frequency analysis
-- Smart number recommendations
-- Quick access to API endpoints
+### Dashboard Web
+El dashboard principal proporciona:
+- Resultados actuales de lotería de todas las provincias
+- Análisis de frecuencia mensual
+- Recomendaciones inteligentes de números
+- Acceso rápido a endpoints de la API
 
-### Manual Data Collection
-Trigger manual scraping:
+### Recolección Manual de Datos
+Activar scraping manual:
 ```bash
 curl -X POST http://localhost:5000/api/scrape
 ```
 
-### Analytics Queries
-Get analytics for specific provinces:
+### Consultas de Análisis
+Obtener análisis para provincias específicas:
 ```bash
-# Monthly analysis for Buenos Aires
+# Análisis mensual para Buenos Aires
 curl "http://localhost:5000/api/analytics/monthly?provincia=Provincia de Buenos Aires"
 
-# Hot/cold numbers for last 60 days
+# Números hot/cold para los últimos 60 días
 curl "http://localhost:5000/api/analytics/hot-cold?days=60"
 
-# Smart recommendations
+# Recomendaciones inteligentes
 curl "http://localhost:5000/api/recommendations"
 ```
 
@@ -110,29 +110,29 @@ curl "http://localhost:5000/api/recommendations"
 
 ### Endpoints
 
-| Endpoint | Method | Description |
-|----------|---------|-------------|
-| `/` | GET | Main dashboard |
-| `/api/current` | GET | Current lottery results |
-| `/api/scrape` | POST | Manual scraping trigger |
-| `/api/analytics/monthly` | GET | Monthly frequency analysis |
-| `/api/analytics/hot-cold` | GET | Hot and cold numbers |
-| `/api/analytics/weekly-patterns` | GET | Weekly pattern analysis |
-| `/api/recommendations` | GET | Smart number recommendations |
-| `/api/patterns` | GET | Detected patterns and alerts |
-| `/api/historical` | GET | Historical results |
-| `/api/stats` | GET | Database statistics |
-| `/api/provinces` | GET | Available provinces |
+| Endpoint | Método | Descripción |
+|----------|--------|-------------|
+| `/` | GET | Dashboard principal |
+| `/api/current` | GET | Resultados actuales de lotería |
+| `/api/scrape` | POST | Activador de scraping manual |
+| `/api/analytics/monthly` | GET | Análisis de frecuencia mensual |
+| `/api/analytics/hot-cold` | GET | Números hot y cold |
+| `/api/analytics/weekly-patterns` | GET | Análisis de patrones semanales |
+| `/api/recommendations` | GET | Recomendaciones inteligentes de números |
+| `/api/patterns` | GET | Patrones detectados y alertas |
+| `/api/historical` | GET | Resultados históricos |
+| `/api/stats` | GET | Estadísticas de base de datos |
+| `/api/provinces` | GET | Provincias disponibles |
 
-### Query Parameters
+### Parámetros de Consulta
 
-- `provincia`: Filter by specific province
-- `days`: Number of days for analysis (default: 30)
-- `weeks`: Number of weeks for analysis (default: 8)
-- `start_date`: Start date for historical queries (YYYY-MM-DD)
-- `end_date`: End date for historical queries (YYYY-MM-DD)
+- `provincia`: Filtrar por provincia específica
+- `days`: Número de días para análisis (predeterminado: 30)
+- `weeks`: Número de semanas para análisis (predeterminado: 8)
+- `start_date`: Fecha de inicio para consultas históricas (YYYY-MM-DD)
+- `end_date`: Fecha de fin para consultas históricas (YYYY-MM-DD)
 
-### Example Response
+### Ejemplo de Respuesta
 ```json
 {
   "success": true,
@@ -160,107 +160,107 @@ curl "http://localhost:5000/api/recommendations"
 
 ## Docker
 
-### Docker Compose (Recommended)
+### Docker Compose (Recomendado)
 ```bash
-# Start all services
+# Iniciar todos los servicios
 docker-compose up -d
 
-# View logs
+# Ver logs
 docker-compose logs -f
 
-# Stop services
+# Detener servicios
 docker-compose down
 ```
 
-The compose setup includes:
-- **quinela-app**: Main web application
-- **quinela-scraper**: Automated data collection service
-- **nginx**: Reverse proxy for production
+La configuración de compose incluye:
+- **quinela-app**: Aplicación web principal
+- **quinela-scraper**: Servicio automatizado de recolección de datos
+- **nginx**: Proxy reverso para producción
 
-### Manual Docker Build
+### Build Manual de Docker
 ```bash
-# Build image
+# Construir imagen
 docker build -t quinela-analytics .
 
-# Run container
+# Ejecutar contenedor
 docker run -p 5000:5000 -v $(pwd)/data:/app/data quinela-analytics
 ```
 
-## Configuration
+## Configuración
 
-### Environment Variables
+### Variables de Entorno
 
-| Variable | Default | Description |
-|----------|---------|-------------|
-| `DATABASE_PATH` | `data/quinela.db` | SQLite database location |
-| `SCRAPING_URL` | `https://www.jugandoonline.com.ar/` | Source website |
-| `SCRAPING_INTERVAL_HOURS` | `1` | Scraping frequency |
-| `FLASK_HOST` | `0.0.0.0` | Flask host |
-| `FLASK_PORT` | `5000` | Flask port |
-| `FLASK_DEBUG` | `False` | Debug mode |
-| `LOG_LEVEL` | `INFO` | Logging level |
+| Variable | Predeterminado | Descripción |
+|----------|----------------|-------------|
+| `DATABASE_PATH` | `data/quinela.db` | Ubicación de base de datos SQLite |
+| `SCRAPING_URL` | `https://www.jugandoonline.com.ar/` | Sitio web fuente |
+| `SCRAPING_INTERVAL_HOURS` | `1` | Frecuencia de scraping |
+| `FLASK_HOST` | `0.0.0.0` | Host de Flask |
+| `FLASK_PORT` | `5000` | Puerto de Flask |
+| `FLASK_DEBUG` | `False` | Modo debug |
+| `LOG_LEVEL` | `INFO` | Nivel de logging |
 
-### Directory Structure
+### Estructura de Directorios
 ```
 quinela-wp/
-├── main.py                 # Main application entry point
-├── config.py              # Configuration management
-├── requirements.txt       # Python dependencies
-├── docker-compose.yml     # Docker orchestration
-├── Dockerfile            # Container definition
-├── backend/              # Core backend modules
-│   ├── api.py           # Flask API routes
-│   ├── database.py      # SQLite operations
-│   ├── analytics.py     # Statistical analysis
-│   └── scraper.py       # Data collection
-├── data/                # SQLite database (auto-created)
-├── logs/                # Application logs (auto-created)
-└── frontend/            # Static assets (future expansion)
+├── main.py                 # Punto de entrada principal de la aplicación
+├── config.py              # Gestión de configuración
+├── requirements.txt       # Dependencias de Python
+├── docker-compose.yml     # Orquestación de Docker
+├── Dockerfile            # Definición de contenedor
+├── backend/              # Módulos principales del backend
+│   ├── api.py           # Rutas de la API Flask
+│   ├── database.py      # Operaciones SQLite
+│   ├── analytics.py     # Análisis estadístico
+│   └── scraper.py       # Recolección de datos
+├── data/                # Base de datos SQLite (auto-creada)
+├── logs/                # Logs de aplicación (auto-creados)
+└── frontend/            # Assets estáticos (expansión futura)
 ```
 
-## Analytics Features
+## Características de Análisis
 
-### Monthly Frequency Analysis
-- Tracks number frequency for current month
-- Calculates appearance percentages
-- Provides statistical metrics (mean, median, max, min)
+### Análisis de Frecuencia Mensual
+- Rastrea la frecuencia de números para el mes actual
+- Calcula porcentajes de aparición
+- Proporciona métricas estadísticas (media, mediana, máx, mín)
 
-### Hot/Cold Number Detection
-- Identifies trending numbers (hot)
-- Finds underperforming numbers (cold)
-- Uses statistical thresholds based on standard deviation
+### Detección de Números Hot/Cold
+- Identifica números en tendencia (hot)
+- Encuentra números con bajo rendimiento (cold)
+- Utiliza umbrales estadísticos basados en desviación estándar
 
-### Weekly Pattern Recognition
-- Analyzes patterns by day of the week
-- Provides day-specific recommendations
-- Historical trend analysis
+### Reconocimiento de Patrones Semanales
+- Analiza patrones por día de la semana
+- Proporciona recomendaciones específicas por día
+- Análisis de tendencias históricas
 
-### Smart Recommendations
-- Combines multiple analysis methods
-- Confidence scoring for each recommendation
-- Includes contrarian strategies
-- Transparent reasoning for each prediction
+### Recomendaciones Inteligentes
+- Combina múltiples métodos de análisis
+- Puntuación de confianza para cada recomendación
+- Incluye estrategias contrarias
+- Razonamiento transparente para cada predicción
 
-## Contributing
+## Contribuir
 
-1. Fork the repository
-2. Create a feature branch (`git checkout -b feature/amazing-feature`)
-3. Commit your changes (`git commit -m 'Add amazing feature'`)
-4. Push to the branch (`git push origin feature/amazing-feature`)
-5. Open a Pull Request
+1. Hacer fork del repositorio
+2. Crear una rama de característica (`git checkout -b feature/caracteristica-increible`)
+3. Hacer commit de tus cambios (`git commit -m 'Agregar característica increíble'`)
+4. Push a la rama (`git push origin feature/caracteristica-increible`)
+5. Abrir un Pull Request
 
-## License
+## Licencia
 
-This project is licensed under the MIT License - see the LICENSE file for details.
+Este proyecto está licenciado bajo la Licencia MIT - ver el archivo LICENSE para detalles.
 
-## Credits
+## Créditos
 
-- **Original Creator**: [matiasdante](https://github.com/matiasdante)
-- **Data Source**: [Jugando Online](https://www.jugandoonline.com.ar/)
-- **Enhanced Analytics**: Advanced statistical analysis and modern web interface
+- **Creador Original**: [matiasdante](https://github.com/matiasdante)
+- **Fuente de Datos**: [Jugando Online](https://www.jugandoonline.com.ar/)
+- **Análisis Mejorado**: Análisis estadístico avanzado e interfaz web moderna
 
 ---
 
 <p align="center">
-  <strong>Made with ❤️ for better lottery analysis</strong>
+  <strong>Hecho con ❤️ para un mejor análisis de lotería</strong>
 </p>

@@ -30,8 +30,3 @@ services:
       api:
         condition: service_healthy
     restart: unless-stopped
-
-volumes:
-  # Using bind mounts for easy dev; can switch to named volumes in prod
-  # db_data:
-  # logs_data:

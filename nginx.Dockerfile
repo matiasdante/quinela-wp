@@ -1,8 +1,8 @@
 # syntax=docker/dockerfile:1
 FROM nginx:1.27-alpine
 
-# Copy full nginx config (este archivo incluye http/events/server)
-COPY nginx.conf /etc/nginx/nginx.conf
+# Copy only server block into conf.d (usando el nginx.conf base de la imagen)
+COPY nginx.conf /etc/nginx/conf.d/default.conf
 
 # Copy static frontend
 COPY frontend/ /var/www/quinela-frontend/

@@ -1,6 +1,7 @@
 import logging
 import os
 from flask import Flask
+from flask_cors import CORS
 from backend.api import QuinielaAPI
 from config import Config
 
@@ -20,14 +21,16 @@ os.makedirs(os.path.dirname(Config.LOG_FILE), exist_ok=True)
 # Create Flask app
 app = Flask(__name__)
 
+# Enable CORS for all routes
+CORS(app, origins=['*'])
+
 # Initialize the enhanced Quiniela API
-quinela_api = QuinielaAPI(app)
+quinela_api = QuinielaAPI(app, api_only=True)
 
 if __name__ == '__main__':
-    logging.info("Starting Quiniela Analytics Server...")
+    logging.info("Starting Quiniela API Server...")
     app.run(
         host=Config.FLASK_HOST, 
         port=Config.FLASK_PORT, 
         debug=Config.FLASK_DEBUG
     )
-

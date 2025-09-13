@@ -1,0 +1,17 @@
+# Dockerignore for quinela-wp
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.env
+.env.local
+.venv/
+venv/
+.build/
+.pytest_cache/
+.cache/
+node_modules/
+**/.DS_Store
+**/Thumbs.db
+data/
+logs/

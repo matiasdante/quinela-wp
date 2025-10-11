@@ -5,12 +5,10 @@ import time
 from datetime import datetime, date
 from typing import Dict, List, Tuple, Optional
 from bs4 import BeautifulSoup
-from backend.database import QuinielaDatabase
 from config import Config, PROVINCIAS
 
 class QuinielaScraper:
     def __init__(self):
-        self.db = QuinielaDatabase()
         self.base_url = Config.SCRAPING_URL
         
         # Setup logging
@@ -84,7 +82,7 @@ class QuinielaScraper:
     
     def scrape_and_store(self) -> bool:
         """
-        Scrape current results and store them in the database
+        Scrape current results (storage is now handled by API layer)
         
         Returns:
             True if successful, False otherwise
@@ -94,8 +92,7 @@ class QuinielaScraper:
             results = self.scrape_current_results()
             
             if results:
-                inserted_count = self.db.insert_results(results)
-                self.logger.info(f"Scraping completed: {inserted_count} records inserted")
+                self.logger.info(f"Scraping completed: {len(results)} provinces scraped")
                 return True
             else:
                 self.logger.warning("No results obtained from scraping")
@@ -149,11 +146,9 @@ class QuinielaScraper:
         results = self.scrape_current_results()
         
         if results:
-            inserted_count = self.db.insert_results(results)
             success = True
-            message = f"Successfully scraped and stored {inserted_count} results"
+            message = f"Successfully scraped {len(results)} provinces"
         else:
-            inserted_count = 0
             success = False
             message = "No results were obtained from scraping"
         
@@ -164,7 +159,6 @@ class QuinielaScraper:
             'success': success,
             'message': message,
             'results': results,
-            'inserted_count': inserted_count,
             'scrape_time': start_time.isoformat(),
             'duration_seconds': duration,
             'provinces_scraped': len([p for p in results.values() if not isinstance(p, str)])
@@ -172,10 +166,7 @@ class QuinielaScraper:
     
     def get_scraper_stats(self) -> Dict:
         """Get statistics about the scraper performance"""
-        db_stats = self.db.get_database_stats()
-        
         return {
-            'database_stats': db_stats,
             'scraping_config': {
                 'base_url': self.base_url,
                 'interval_hours': Config.SCRAPING_INTERVAL_HOURS,
